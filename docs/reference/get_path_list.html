@@ -80,16 +80,8 @@ class of each leaf (can be a list, or R objects).</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">MyList</span> <span class="op">&lt;-</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  My_iris <span class="op">=</span> <span class="fu">tibble</span><span class="op">(</span><span class="va">iris</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  My_car <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>    car_data <span class="op">=</span> <span class="fu">tibble</span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>    model_data <span class="op">=</span> <span class="fu">tibble</span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span></span>
-<span class="r-in"><span>    <span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">get_path_list</span><span class="op">(</span><span class="va">MyList</span><span class="op">)</span><span class="co">#'</span></span></span>
+<span class="r-in"><span><span class="va">list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>i <span class="op">=</span> <span class="va">iris</span>, m <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>t1 <span class="op">=</span> <span class="va">mtcars</span>, t2 <span class="op">=</span> <span class="va">storms</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">get_path_list</span><span class="op">(</span><span class="va">list</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>

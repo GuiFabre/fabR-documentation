@@ -80,10 +80,6 @@ Prefer eval(parse(text = ...) instead.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Simple assignation will assignate 'b' in parceval environment (which is associated</span></span></span>
-<span class="r-in"><span><span class="co"># to a function and different from .GlobalEnv, by definition).</span></span></span>
-<span class="r-in"><span><span class="co"># Double assignation will put 'b' in .GlobalEnv.</span></span></span>
-<span class="r-in"><span><span class="co"># (similar to assign(x = "b",value = 1,envir = .GlobalEnv))</span></span></span>
 <span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></span>
 <span class="r-in"><span><span class="fu">parceval</span><span class="op">(</span><span class="st">"b &lt;&lt;- 1"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span></span>
@@ -96,26 +92,25 @@ Prefer eval(parse(text = ...) instead.</p>
 <span class="r-in"><span><span class="fu">parceval</span><span class="op">(</span><span class="va">my_code</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># use rowwise to directly use parceval in a tibble, or use a for loop.</span></span></span>
-<span class="r-in"><span><span class="fu">as_tibble</span><span class="op">(</span><span class="va">cars</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
-<span class="r-in"><span><span class="fu">mutate</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  to_eval <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">speed</span>,<span class="st">"/"</span>,<span class="va">dist</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
-<span class="r-in"><span><span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
-<span class="r-in"><span><span class="fu">mutate</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  eval <span class="op">=</span> <span class="fu">parceval</span><span class="op">(</span><span class="va">to_eval</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    to_eval <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">speed</span>,<span class="st">"/"</span>,<span class="va">dist</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html" class="external-link">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    eval <span class="op">=</span> <span class="fu">parceval</span><span class="op">(</span><span class="va">to_eval</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># parceval can be parcevaled itself!</span></span></span>
-<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">code_R</span> <span class="op">&lt;-</span></span></span>
-<span class="r-in"><span><span class="st">'as_tibble(cars) %&gt;%</span></span></span>
+<span class="r-in"><span>  <span class="st">'as_tibble(cars) %&gt;%</span></span></span>
 <span class="r-in"><span><span class="st">  mutate(</span></span></span>
 <span class="r-in"><span><span class="st">    to_eval = paste0(speed,"/",dist)) %&gt;%</span></span></span>
 <span class="r-in"><span><span class="st">  rowwise() %&gt;%</span></span></span>
 <span class="r-in"><span><span class="st">  mutate(</span></span></span>
 <span class="r-in"><span><span class="st">    eval = parceval(to_eval))'</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">code_R</span> <span class="op">%&gt;%</span> <span class="va">cat</span></span></span>
-<span class="r-in"><span><span class="va">code_R</span> <span class="op">%&gt;%</span> <span class="va">parceval</span></span></span>
-<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">code_R</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="va">cat</span></span></span>
+<span class="r-in"><span><span class="va">code_R</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="va">parceval</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>

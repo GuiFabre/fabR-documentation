@@ -87,9 +87,9 @@ the tibble</p>
 <span class="r-in"><span><span class="co"># the row number is returned to identify which observations have repeated</span></span></span>
 <span class="r-in"><span><span class="co"># values</span></span></span>
 <span class="r-in"><span><span class="va">mtcars_duplicated</span> <span class="op">&lt;-</span></span></span>
-<span class="r-in"><span>  <span class="va">mtcars</span> <span class="op">%&gt;%</span></span></span>
-<span class="r-in"><span>  <span class="fu">bind_rows</span><span class="op">(</span><span class="va">.</span>,<span class="va">mtcars</span> <span class="op">%&gt;%</span> <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span></span>
-<span class="r-in"><span>  <span class="va">as_tibble</span> <span class="op">%&gt;%</span></span></span>
+<span class="r-in"><span>  <span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu">bind_rows</span><span class="op">(</span><span class="va">.</span>,<span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">slice</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="va">as_tibble</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu">get_duplicated_rows</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
