@@ -13,12 +13,6 @@
     <loc>/reference/add_index.html</loc>
   </url>
   <url>
-    <loc>/reference/add_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_template_run.html</loc>
-  </url>
-  <url>
     <loc>/reference/as_any_boolean.html</loc>
   </url>
   <url>
@@ -26,9 +20,6 @@
   </url>
   <url>
     <loc>/reference/as_any_symbol.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cast_error_fargs.html</loc>
   </url>
   <url>
     <loc>/reference/collect_roxygen.html</loc>
@@ -50,9 +41,6 @@
   </url>
   <url>
     <loc>/reference/get_all_na_rows.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_args.html</loc>
   </url>
   <url>
     <loc>/reference/get_duplicated_cols.html</loc>
@@ -106,28 +94,10 @@
     <loc>/reference/plot_pie_valid_value.html</loc>
   </url>
   <url>
-    <loc>/reference/prep_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/prep_template_run.html</loc>
-  </url>
-  <url>
     <loc>/reference/read_csv_any_formats.html</loc>
   </url>
   <url>
     <loc>/reference/read_excel_allsheets.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_template.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_template_run.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_pipeline.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_template.html</loc>
   </url>
   <url>
     <loc>/reference/silently_run.html</loc>
