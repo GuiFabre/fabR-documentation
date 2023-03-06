@@ -67,7 +67,7 @@ grouped by another column. The output can be editable (using plotly library) or 
 <span>  negate <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  missing_values <span class="op">=</span> <span class="st">"c()"</span>,</span>
 <span>  max <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>  out <span class="op">=</span> <span class="st">"ggplot2"</span>,</span>
+<span>  out <span class="op">=</span> <span class="st">"ggplot2-cat"</span>,</span>
 <span>  group_by <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -132,8 +132,8 @@ by this column.</p></dd>
 <span class="r-in"><span><span class="co"># Example 1: cat output generated as a template when no argument provided</span></span></span>
 <span class="r-in"><span><span class="fu">plot_main_word</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Example 2: words contains in Species</span></span></span>
-<span class="r-in"><span><span class="fu">plot_main_word</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">tbl</span>, col <span class="op">=</span> <span class="st">"Species"</span>, out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Example 2: words contained in Species</span></span></span>
+<span class="r-in"><span><span class="fu">plot_main_word</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">iris</span>, col <span class="op">=</span> <span class="st">"Species"</span>, out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>

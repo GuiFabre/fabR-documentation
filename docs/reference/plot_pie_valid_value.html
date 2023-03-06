@@ -59,12 +59,12 @@ grouped by another column. The output can be editable (using plotly library) or 
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_pie_valid_value</span><span class="op">(</span></span>
-<span>  tbl <span class="op">=</span> <span class="st">"iris"</span>,</span>
-<span>  col <span class="op">=</span> <span class="st">"Species"</span>,</span>
+<span>  tbl <span class="op">=</span> <span class="st">"storms"</span>,</span>
+<span>  col <span class="op">=</span> <span class="st">"status"</span>,</span>
 <span>  filter <span class="op">=</span> <span class="st">"c()"</span>,</span>
 <span>  negate <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  missing_values <span class="op">=</span> <span class="st">"'versicolor'"</span>,</span>
-<span>  out <span class="op">=</span> <span class="st">"ggplot2"</span>,</span>
+<span>  missing_values <span class="op">=</span> <span class="st">"'other low'"</span>,</span>
+<span>  out <span class="op">=</span> <span class="st">"ggplot2-cat"</span>,</span>
 <span>  group_by <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -123,13 +123,14 @@ by this column.</p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="co"># Example 1: cat output generated as a template when no argument provided</span></span></span>
+<span class="r-in"><span><span class="fu">plot_pie_valid_value</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Example 2: graph of Species (virginica is associated to missing values for the</span></span></span>
 <span class="r-in"><span><span class="co"># purpose of example)</span></span></span>
 <span class="r-in"><span><span class="fu">plot_pie_valid_value</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  tbl <span class="op">=</span> <span class="va">tbl</span>,</span></span>
-<span class="r-in"><span>  col <span class="op">=</span> <span class="st">"Species"</span>,</span></span>
-<span class="r-in"><span>  missing_values <span class="op">=</span> <span class="st">"'virginica'"</span> ,</span></span>
+<span class="r-in"><span>  tbl <span class="op">=</span> <span class="va">storms</span>,</span></span>
+<span class="r-in"><span>  col <span class="op">=</span> <span class="st">"status"</span>,</span></span>
+<span class="r-in"><span>  missing_values <span class="op">=</span> <span class="st">"'other low'"</span> ,</span></span>
 <span class="r-in"><span>  out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
