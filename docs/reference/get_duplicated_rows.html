@@ -20,7 +20,7 @@ useful to identify repeated observation across different ids)"><!-- mathjax --><
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -72,7 +72,7 @@ useful to identify repeated observation across different ids)</p>
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>tbl</dt>
-<dd><p>R object(dataframe or tibble) of the input tbl</p></dd>
+<dd><p>R object(dataframe or tibble) of the input tibble</p></dd>
 
 
 <dt>id_col</dt>
@@ -86,19 +86,21 @@ The row number will be used to identify those observations.</p></dd>
     <h2>Value</h2>
     
 
-<p>A tibble indicating which row which values is the same in
-the tibble</p>
+<p>A tibble indicating which row which values is the same in the tibble</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># the row numbers are returned to identify which observations have repeated values</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># the row numbers are returned to identify which observations have repeated</span></span></span>
+<span class="r-in"><span><span class="co"># values</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">get_duplicated_rows</span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">mtcars</span>,<span class="va">mtcars</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1 variable: condition &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -110,7 +112,7 @@ the tibble</p>
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Guillaume Fabre.</p>
+  <p></p><p>Developed by Guillaume Fabre, Maelstrom-Research.</p>
 </div>
 
 <div class="pkgdown">

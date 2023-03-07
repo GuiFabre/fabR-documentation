@@ -19,7 +19,7 @@ https://statmethods.wordpress.com/2014/06/19/quickly-export-multiple-r-objects-t
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
       </span>
     </div>
 
@@ -81,7 +81,8 @@ https://statmethods.wordpress.com/2014/06/19/quickly-export-multiple-r-objects-t
     <h2>Value</h2>
     
 
-<p>Nothing to be returned. The file is created at the path declared in the environnement.</p>
+<p>Nothing to be returned. The file is created at the path declared in the
+environment.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -90,11 +91,14 @@ https://statmethods.wordpress.com/2014/06/19/quickly-export-multiple-r-objects-t
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">write_excel_allsheets</span><span class="op">(</span>list <span class="op">=</span> <span class="va">myobject</span>, filename <span class="op">=</span> <span class="st">"myobject.xlsx"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/unlink.html" class="external-link">unlink</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu">write_excel_allsheets</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, mtcars <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -106,7 +110,7 @@ https://statmethods.wordpress.com/2014/06/19/quickly-export-multiple-r-objects-t
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Guillaume Fabre.</p>
+  <p></p><p>Developed by Guillaume Fabre, Maelstrom-Research.</p>
 </div>
 
 <div class="pkgdown">
