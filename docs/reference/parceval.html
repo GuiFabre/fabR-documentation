@@ -26,7 +26,7 @@ Prefer eval(parse(text = ...) instead."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
       </span>
     </div>
 
@@ -100,7 +100,7 @@ Prefer eval(parse(text = ...) instead.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 1 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># Simple assignation will assign 'b' in parceval environment (which is</span></span></span>
@@ -108,14 +108,10 @@ Prefer eval(parse(text = ...) instead.</p>
 <span class="r-in"><span><span class="co"># Double assignation will put 'b' in .GlobalEnv.</span></span></span>
 <span class="r-in"><span><span class="co"># (similar to assign(x = "b",value = 1,envir = .GlobalEnv))</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># a &lt;- 1</span></span></span>
-<span class="r-in"><span><span class="co"># parceval("b &lt;&lt;- 1")</span></span></span>
-<span class="r-in"><span><span class="co"># print(a)</span></span></span>
-<span class="r-in"><span><span class="co"># print(b)</span></span></span>
-<span class="r-in"><span><span class="co"># parceval("b &lt;&lt;- b + a")</span></span></span>
-<span class="r-in"><span><span class="co"># print(b)</span></span></span>
-<span class="r-in"><span><span class="co"># my_code &lt;- paste0("b &lt;&lt;- b + ",rep(1,3), "; message('value of b: ', b)")</span></span></span>
-<span class="r-in"><span><span class="co"># parceval(my_code)</span></span></span>
+<span class="r-in"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span></span>
+<span class="r-in"><span><span class="fu">parceval</span><span class="op">(</span><span class="st">"print(a)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">my_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"a &lt;- a + "</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span>, <span class="st">"; message('value of a: ', a)"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">parceval</span><span class="op">(</span><span class="va">my_code</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 2 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># use rowwise to directly use parceval in a tibble, or use a for loop.</span></span></span>
@@ -128,21 +124,6 @@ Prefer eval(parse(text = ...) instead.</p>
 <span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html" class="external-link">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    eval <span class="op">=</span> <span class="fu">parceval</span><span class="op">(</span><span class="va">to_eval</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Rowwise: </span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    speed  dist to_eval  eval</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     4     2 4/2     2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     4    10 4/10    0.4  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     7     4 7/4     1.75 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     7    22 7/22    0.318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     8    16 8/16    0.5  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     9    10 9/10    0.9  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    10    18 10/18   0.556</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    10    26 10/26   0.385</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    10    34 10/34   0.294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    11    17 11/17   0.647</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 40 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 3 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># parceval can be parcevaled itself!</span></span></span>
@@ -156,30 +137,10 @@ Prefer eval(parse(text = ...) instead.</p>
 <span class="r-in"><span><span class="st">    eval = parceval(to_eval))'</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">code_R</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> as_tibble(cars) %&gt;%</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mutate(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     to_eval = paste0(speed,"/",dist)) %&gt;%</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   rowwise() %&gt;%</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mutate(</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     eval = parceval(to_eval))</span>
 <span class="r-in"><span><span class="fu">parceval</span><span class="op">(</span><span class="va">code_R</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Rowwise: </span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    speed  dist to_eval  eval</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     4     2 4/2     2    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     4    10 4/10    0.4  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     7     4 7/4     1.75 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     7    22 7/22    0.318</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     8    16 8/16    0.5  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     9    10 9/10    0.9  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    10    18 10/18   0.556</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    10    26 10/26   0.385</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    10    34 10/34   0.294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    11    17 11/17   0.647</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 40 more rows</span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in print(a):</span> object 'a' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

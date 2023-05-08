@@ -23,7 +23,7 @@ as_any_date()."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
       </span>
     </div>
 
@@ -110,7 +110,7 @@ first element, and doesn't otherwise.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
@@ -126,10 +126,6 @@ first element, and doesn't otherwise.</p>
 <span class="r-in"><span>  <span class="st">"1509-11-30"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"1809-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">guess_date_format</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   name_var `Date format` `% values formated` `Date match`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> time     ymd                           100 Exact match </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 2 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># Ambiguous dates --------------------------------------------------------</span></span></span>
@@ -143,10 +139,6 @@ first element, and doesn't otherwise.</p>
 <span class="r-in"><span>  <span class="st">"1509-11-30"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"1809-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">guess_date_format</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   name_var `Date format` `% values formated` `Date match` </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> time     ymd                          85.7 Closest match</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 3 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># Non date format dates --------------------------------------------------</span></span></span>
@@ -160,12 +152,12 @@ first element, and doesn't otherwise.</p>
 <span class="r-in"><span>  <span class="st">"150-11-30"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"180-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">guess_date_format</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   name_var `Date format` `% values formated` `Date match`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> time     dmy                             0 No match    </span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

@@ -22,7 +22,7 @@ editable for coding recycling purpose."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
       </span>
     </div>
 
@@ -71,7 +71,7 @@ editable for coding recycling purpose.</p>
 
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_date</span><span class="op">(</span></span>
-<span>  tbl <span class="op">=</span> <span class="st">"storms_see_example"</span>,</span>
+<span>  tbl <span class="op">=</span> <span class="st">"dplyr::storms"</span>,</span>
 <span>  col <span class="op">=</span> <span class="st">"annual"</span>,</span>
 <span>  filter <span class="op">=</span> <span class="st">"c()"</span>,</span>
 <span>  negate <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -141,11 +141,11 @@ by this column.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 1 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># cat output generated as a template when no argument provided</span></span></span>
-<span class="r-in"><span><span class="co"># plot_date()</span></span></span>
+<span class="r-in"><span><span class="fu">plot_date</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 2 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># graph of number of storms per month</span></span></span>
@@ -158,9 +158,26 @@ by this column.</p></dd>
 <span class="r-in"><span> col <span class="op">=</span> <span class="st">"annual"</span>,</span></span>
 <span class="r-in"><span> time <span class="op">=</span> <span class="st">"month"</span>,</span></span>
 <span class="r-in"><span> out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in mutate(., annual = month(as.Date(annual))):</span> object 'annual_storms' not found</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> dplyr::storms %&gt;% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   mutate(annual = day(as.Date(annual))) %&gt;% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   filter(!(annual %in% c())) %&gt;% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   filter(!(annual %in% c()  )) %&gt;% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group_by(annual,'') %&gt;%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   tally  %&gt;% </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ggplot(aes(x = annual, y = n, color = ''))+</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   geom_segment(</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   aes(x=annual,xend=annual,y=0,yend = n),color='grey')+</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   geom_point(size=4) +</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   theme(</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     panel.grid.major.x = element_blank(),</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     panel.border = element_blank(),</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     axis.ticks.x = element_blank()) +</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   xlab('distribution of dates - in day') +</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ylab('Number of participants') + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   facet_wrap(~'')</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in mutate(., annual = month(as.Date(annual))):</span> object 'annual_storms' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

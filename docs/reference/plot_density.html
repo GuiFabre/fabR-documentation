@@ -21,7 +21,7 @@ editable for coding recycling purpose."><!-- mathjax --><script src="https://cdn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0.1001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
       </span>
     </div>
 
@@ -132,11 +132,17 @@ by this column.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="op">{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 1 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># cat output generated as a template when no argument provided</span></span></span>
 <span class="r-in"><span><span class="fu">plot_density</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">##### Example 2 -------------------------------------------------------------</span></span></span>
+<span class="r-in"><span><span class="co"># graph of Petal.Length</span></span></span>
+<span class="r-in"><span><span class="fu">plot_density</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">iris</span>, col <span class="op">=</span> <span class="st">"Petal.Length"</span>, out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> iris %&gt;% </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   filter(!(Sepal.Length %in% c())) %&gt;% </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   filter(!(Sepal.Length %in% c()  ))      %&gt;% </span>
@@ -144,13 +150,7 @@ by this column.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   geom_density( color = '#e9ecef', alpha = 0.8) + </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   theme(legend.position = 'right') + </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   facet_wrap(~'')</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co">##### Example 2 -------------------------------------------------------------</span></span></span>
-<span class="r-in"><span><span class="co"># graph of Petal.Length</span></span></span>
-<span class="r-in"><span><span class="fu">plot_density</span><span class="op">(</span>tbl <span class="op">=</span> <span class="va">iris</span>, col <span class="op">=</span> <span class="st">"Petal.Length"</span>, out <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot_density-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
