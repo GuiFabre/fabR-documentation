@@ -29,8 +29,8 @@ fs::dir_delete("/staff/gfabre/fabR/docs")
 fs::dir_delete("/staff/gfabre/fabR-documentation/docs")
 pkgdown::build_site()
 fs::dir_copy(
-  "/staff/gfabre/fabR/docs",
-  "/staff/gfabre/fabR-documentation/docs",
+  "../fabR/docs",
+  "fabR-documentation/docs",
   overwrite = TRUE
 )
 
