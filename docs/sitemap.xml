@@ -16,6 +16,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
     <loc>/reference/add_index.html</loc>
   </url>
   <url>
@@ -28,7 +31,19 @@
     <loc>/reference/as_any_symbol.html</loc>
   </url>
   <url>
+    <loc>/reference/bookdown_open.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bookdown_render.html</loc>
+  </url>
+  <url>
+    <loc>/reference/bookdown_template.html</loc>
+  </url>
+  <url>
     <loc>/reference/collect_roxygen.html</loc>
+  </url>
+  <url>
+    <loc>/reference/deprecated.html</loc>
   </url>
   <url>
     <loc>/reference/fabR-package.html</loc>
@@ -79,30 +94,6 @@
     <loc>/reference/parceval.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_bar.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_box.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_date.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_density.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_histogram.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_main_word.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_pie.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_pie_valid_value.html</loc>
-  </url>
-  <url>
     <loc>/reference/read_csv_any_formats.html</loc>
   </url>
   <url>
@@ -110,18 +101,6 @@
   </url>
   <url>
     <loc>/reference/silently_run.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_category.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_numerical.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary_text.html</loc>
-  </url>
-  <url>
-    <loc>/reference/template_visual_report.html</loc>
   </url>
   <url>
     <loc>/reference/which_any_date.html</loc>

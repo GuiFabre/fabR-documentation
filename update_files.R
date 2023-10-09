@@ -1,37 +1,18 @@
-library(harmonizRv3)
-library(fs)
-library(goodpractice)
-usethis::use_pkgdown()
-usethis::use_github_action_check_standard()
-usethis::use_readme_rmd()
+library(fabR)
+# usethis::use_pkgdown()
 
-
-# https://devguide.ropensci.org/building.html
-# https://r-pkgs.org/release.html#sec-release-process
-# https://kalimu.github.io/post/checklist-for-r-package-submission-to-cran/
-
-# usethis::use_package_doc()
-# usethis::use_vignette("fabR-vignette")
-# usethis::use_cran_comments()
-devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
-devtools::build_readme()
-spelling::spell_check_package(".")
-devtools::build_manual()
-devtools::check()
-goodpractice::gp()
-devtools::build(manual = TRUE)
-# push to git
-devtools::submit_cran()
-# push to git
-
-
-fs::dir_delete("/staff/gfabre/fabR/docs")
-fs::dir_delete("/staff/gfabre/fabR-documentation/docs")
+# devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))
+# devtools::build_readme()
+# devtools::build_rmd('NEWS.Rmd')
+fs::dir_delete("docs")
 pkgdown::build_site()
-fs::dir_copy(
-  "../fabR/docs",
-  "fabR-documentation/docs",
-  overwrite = TRUE
-)
 
-fabR::fabR_help()
+fs::dir_delete("../fabR-documentation/docs")
+fs::dir_copy(
+  "docs",
+  "../fabR-documentation/docs",
+  overwrite = TRUE)
+
+# push to git
+"https://github.com/maelstrom-research/madshapR-documentation/actions/"
+harmonizR_help()

@@ -23,7 +23,7 @@ as_any_date()."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -41,6 +41,9 @@ as_any_date()."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
       <a href="../articles/fabR-vignette.html">fabR-vignette</a>
     </li>
   </ul></li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/GuiFabre/fabR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
@@ -94,7 +97,7 @@ object to be evaluated.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>Contrary to lubridate library or <code><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">base::as.Date()</a></code>, the function evaluates
+    <p>Contrary to lubridate library or <code><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date()</a></code>, the function evaluates
 the column as a whole, and does not cast the column if there is ambiguity
 between values. For example, ('19-07-1983', '02-03-1982') implies that 02
 refers to the day and 03 refers to the month, since that order works for the
@@ -104,7 +107,7 @@ first element, and doesn't otherwise.</p>
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ymd()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ydm()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::dmy()</a></code>,
 <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::dym()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::mdy()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::myd()</a></code>,
-<code><a href="https://lubridate.tidyverse.org/reference/as_date.html" class="external-link">lubridate::as_date()</a></code>,
+<code><a href="https://lubridate.tidyverse.org/reference/as_date.html" class="external-link">lubridate::as_date()</a></code>,<code><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date()</a></code>,
 <code><a href="which_any_date.html">which_any_date()</a></code>,<code><a href="as_any_date.html">as_any_date()</a></code></p></div>
     </div>
 
@@ -131,14 +134,19 @@ first element, and doesn't otherwise.</p>
 <span class="r-in"><span><span class="co"># Ambiguous dates --------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="va">time</span> <span class="op">&lt;-</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  <span class="st">"1983-19-07"</span>,</span></span>
-<span class="r-in"><span>  <span class="st">"2003-01-14"</span>,</span></span>
-<span class="r-in"><span>  <span class="st">"2010-09-29"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"2023-12-12"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"2009-09-03"</span>,</span></span>
-<span class="r-in"><span>  <span class="st">"1509-11-30"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"1809-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">guess_date_format</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">time</span> <span class="op">&lt;-</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>time <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="st">"1983-19-07"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"1983-10-13"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"2009-09-03"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"1509-11-30"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">guess_date_format</span><span class="op">(</span><span class="va">time</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">##### Example 3 -------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="co"># Non date format dates --------------------------------------------------</span></span></span>
@@ -155,9 +163,9 @@ first element, and doesn't otherwise.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   name_var `Date format` `% values formated` `Date match`</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> time     dmy                             0 No match    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   name_var `Date format`                `% values formated` `Date match`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> time     dmy, dym, ymd, ydm, mdy, myd                   0 No match    </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

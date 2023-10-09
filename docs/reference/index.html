@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
       </span>
     </div>
 
@@ -35,6 +35,9 @@
       <a href="../articles/fabR-vignette.html">fabR-vignette</a>
     </li>
   </ul></li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/GuiFabre/fabR/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
@@ -74,6 +77,18 @@
         </td>
         <td><p>Create objects of type "symbol"</p></td>
       </tr><tr><td>
+          <p><code><a href="bookdown_open.html">bookdown_open()</a></code> </p>
+        </td>
+        <td><p>Open a bookdown site in a browser</p></td>
+      </tr><tr><td>
+          <p><code><a href="bookdown_render.html">bookdown_render()</a></code> </p>
+        </td>
+        <td><p>Render a bookdown into a bookdown site</p></td>
+      </tr><tr><td>
+          <p><code><a href="bookdown_template.html">bookdown_template()</a></code> </p>
+        </td>
+        <td><p>Create a bookdown template.</p></td>
+      </tr><tr><td>
           <p><code><a href="collect_roxygen.html">collect_roxygen()</a></code> </p>
         </td>
         <td><p>Collects and Generates documentation of a package in a tibble format.</p></td>
@@ -100,7 +115,7 @@
       </tr><tr><td>
           <p><code><a href="get_all_na_rows.html">get_all_na_rows()</a></code> </p>
         </td>
-        <td><p>Extract columns that are all 'NA' from a tibble</p></td>
+        <td><p>Extract observations (rows) that have all NA values in a tibble</p></td>
       </tr><tr><td>
           <p><code><a href="get_duplicated_cols.html">get_duplicated_cols()</a></code> </p>
         </td>
@@ -108,7 +123,7 @@
       </tr><tr><td>
           <p><code><a href="get_duplicated_rows.html">get_duplicated_rows()</a></code> </p>
         </td>
-        <td><p>Extract observations(rows) that have same values in a tibble</p></td>
+        <td><p>Extract observations (rows) that have same values in a tibble</p></td>
       </tr><tr><td>
           <p><code><a href="get_path_list.html">get_path_list()</a></code> </p>
         </td>
@@ -116,7 +131,7 @@
       </tr><tr><td>
           <p><code><a href="get_unique_value_cols.html">get_unique_value_cols()</a></code> </p>
         </td>
-        <td><p>Extract columns that are all 'NA' from a tibble</p></td>
+        <td><p>Extract columns that have unique values in a tibble</p></td>
       </tr><tr><td>
           <p><code><a href="guess_date_format.html">guess_date_format()</a></code> </p>
         </td>
@@ -134,38 +149,6 @@
         </td>
         <td><p>Shortcut to turn String character into R code</p></td>
       </tr><tr><td>
-          <p><code><a href="plot_bar.html">plot_bar()</a></code> </p>
-        </td>
-        <td><p>Draw bar plot of one (possibly grouped) column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_box.html">plot_box()</a></code> </p>
-        </td>
-        <td><p>Draw box plot of one (possibly grouped) column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_date.html">plot_date()</a></code> </p>
-        </td>
-        <td><p>Draw lollipop plot of one (possibly grouped) time-related column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_density.html">plot_density()</a></code> </p>
-        </td>
-        <td><p>Draw density plot of one (possibly grouped) column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_histogram.html">plot_histogram()</a></code> </p>
-        </td>
-        <td><p>Draw histogram of one (possibly grouped) column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_main_word.html">plot_main_word()</a></code> </p>
-        </td>
-        <td><p>Draw bar plot of one (possibly grouped) open-text column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_pie.html">plot_pie()</a></code> </p>
-        </td>
-        <td><p>Draw pie chart of one (possibly grouped) column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="plot_pie_valid_value.html">plot_pie_valid_value()</a></code> </p>
-        </td>
-        <td><p>Draw pie chart of one column in a tibble (valid and non-valid values)</p></td>
-      </tr><tr><td>
           <p><code><a href="read_csv_any_formats.html">read_csv_any_formats()</a></code> </p>
         </td>
         <td><p>Read a csv file using read_csv and avoid errors</p></td>
@@ -178,29 +161,13 @@
         </td>
         <td><p>Shortcut to silently run a code chunk avoiding error, messages and warnings</p></td>
       </tr><tr><td>
-          <p><code><a href="summary_category.html">summary_category()</a></code> </p>
-        </td>
-        <td><p>Create summary tibble of one (possibly grouped) category-type column</p></td>
-      </tr><tr><td>
-          <p><code><a href="summary_numerical.html">summary_numerical()</a></code> </p>
-        </td>
-        <td><p>Create summary tibble of a (possibly grouped) numerical-type column</p></td>
-      </tr><tr><td>
-          <p><code><a href="summary_text.html">summary_text()</a></code> </p>
-        </td>
-        <td><p>Create summary table of one (possibly grouped) text-type column in a tibble</p></td>
-      </tr><tr><td>
-          <p><code><a href="template_visual_report.html">template_visual_report()</a></code> </p>
-        </td>
-        <td><p>Create a bookdown template for the visual report</p></td>
-      </tr><tr><td>
           <p><code><a href="which_any_date.html">which_any_date()</a></code> </p>
         </td>
         <td><p>Evaluates and gives the possible format(s) for an object to be evaluated</p></td>
       </tr><tr><td>
           <p><code><a href="write_excel_allsheets.html">write_excel_allsheets()</a></code> </p>
         </td>
-        <td><p>Write all Excel sheets using <code><a href="https://rdrr.io/pkg/xlsx/man/write.xlsx.html" class="external-link">xlsx::write.xlsx()</a></code> recursively</p></td>
+        <td><p>Write all Excel sheets using <code><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html" class="external-link">writexl::write_xlsx()</a></code> recursively</p></td>
       </tr></tbody></table></div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
