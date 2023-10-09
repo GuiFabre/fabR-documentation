@@ -14,5 +14,5 @@ fs::dir_copy(
   overwrite = TRUE)
 
 # push to git
-"https://github.com/maelstrom-research/madshapR-documentation/actions/"
-harmonizR_help()
+"https://github.com/guifabre/fabR-documentation/actions/"
+fabR_help()
