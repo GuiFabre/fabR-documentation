@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.1</span>
       </span>
     </div>
 
@@ -61,7 +61,11 @@
 <h2 class="page-header" data-toc-text="development version" id="fabr-development-version">fabR (development version)<a class="anchor" aria-label="anchor" href="#fabr-development-version"></a></h2>
 </div>
     <div class="section level2">
-<h2 class="page-header" data-toc-text="development version" id="fabr-development-version-1">fabR (development version)<a class="anchor" aria-label="anchor" href="#fabr-development-version-1"></a></h2>
+<h2 class="page-header" data-toc-text="2.0.1" id="fabr-201">fabR 2.0.1<small>2023-11-02</small><a class="anchor" aria-label="anchor" href="#fabr-201"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-and-improvements-2-0-1">Bug fixes and improvements<a class="anchor" aria-label="anchor" href="#bug-fixes-and-improvements-2-0-1"></a></h3>
+<ul><li>the function add_index has been corrected to handle bug when the tibble in input contains a column named <code>start</code>.</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.0" id="fabr-200">fabR 2.0.0<small>2023-09-28</small><a class="anchor" aria-label="anchor" href="#fabr-200"></a></h2>
@@ -139,7 +143,7 @@
 <h3 id="write-and-read-excel-and-csv-1-1-1">Write and read excel and csv<a class="anchor" aria-label="anchor" href="#write-and-read-excel-and-csv-1-1-1"></a></h3>
 <ul><li><p><code><a href="../reference/read_csv_any_formats.html">read_csv_any_formats()</a></code> The csv file is read twice to detect the number of lines to use in attributing the column type (‘guess_max’ parameter of read_csv). This avoids common errors when reading csv files.</p></li>
 <li><p><code><a href="../reference/read_excel_allsheets.html">read_excel_allsheets()</a></code> The Excel file is read and the values are placed in a list of tibbles, with each sheet in a separate element in the list. If the Excel file has only one sheet, the output is a single tibble.</p></li>
-<li><p><code><a href="../reference/write_excel_allsheets.html">write_excel_allsheets()</a></code> Write all Excel sheets using <code>xlsx::write.xlsx()</code> recursively.</p></li>
+<li><p><code><a href="../reference/write_excel_allsheets.html">write_excel_allsheets()</a></code> Write all Excel sheets using <code><a href="https://rdrr.io/pkg/xlsx/man/write.xlsx.html" class="external-link">xlsx::write.xlsx()</a></code> recursively.</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="plot-and-summary-functions-used-in-a-visual-report-1-1-1">Plot and summary functions used in a visual report<a class="anchor" aria-label="anchor" href="#plot-and-summary-functions-used-in-a-visual-report-1-1-1"></a></h3>
