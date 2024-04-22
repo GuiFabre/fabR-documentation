@@ -23,7 +23,7 @@ for the values as a whole."><!-- mathjax --><script src="https://cdnjs.cloudflar
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -77,7 +77,7 @@ for the values as a whole.</p>
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">as_any_date</span><span class="op">(</span></span>
 <span>  x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dmy"</span>, <span class="st">"dym"</span>, <span class="st">"ymd"</span>, <span class="st">"ydm"</span>, <span class="st">"mdy"</span>, <span class="st">"myd"</span>, <span class="st">"as_date"</span><span class="op">)</span></span>
+<span>  format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dmy"</span>, <span class="st">"dym"</span>, <span class="st">"ymd"</span>, <span class="st">"ydm"</span>, <span class="st">"mdy"</span>, <span class="st">"myd"</span>, <span class="st">"my"</span>, <span class="st">"ym"</span>, <span class="st">"as_date"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -89,7 +89,7 @@ for the values as a whole.</p>
 
 <dt>format</dt>
 <dd><p>A character identifying the format to apply to the object.
-That format can be 'ymd','ydm','dym','dmy','mdy' or 'myd'.</p></dd>
+That format can be 'ymd','ydm','dym','dmy','mdy','myd','my','ym'.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -109,7 +109,8 @@ the user provides the format to apply.</p>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p><code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ymd()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ydm()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::dmy()</a></code>,
-<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::dym()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::mdy()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::myd()</a></code>,
+<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::myd()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::mdy()</a></code>,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::dym()</a></code>,
+<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::my()</a></code> ,<code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ym()</a></code>,
 <code><a href="https://lubridate.tidyverse.org/reference/as_date.html" class="external-link">lubridate::as_date()</a></code>,<code><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date()</a></code>,
 <code><a href="guess_date_format.html">guess_date_format()</a></code>,<code><a href="which_any_date.html">which_any_date()</a></code></p></div>
     </div>
@@ -135,25 +136,32 @@ the user provides the format to apply.</p>
 <span class="r-in"><span>  <span class="st">"14-01-1925"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"12/13/2015"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"2009-09-13"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"17-12-12"</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"coucou"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"2025 jan the 30th"</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"1809-01-19"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">time</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>new_time <span class="op">=</span> <span class="fu">as_any_date</span><span class="op">(</span><span class="va">time</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Ambiguous date format (19 02 12). Please provide format.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>There was 1 warning in `mutate()`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> In argument: `new_time = as_any_date(time)`.</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> Caused by warning:</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> All formats failed to parse for some values.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> Useful tip: Use which_any_date(x) to get formats.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   time              new_time  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 1983 07-19        1983-07-19</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 14-01-1925        1925-01-14</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 12/13/2015        2015-12-13</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 2009-09-13        2009-09-13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2025 jan the 30th 2025-01-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 1809-01-19        1809-01-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 17-12-12          2017-12-12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> coucou            <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> 2025 jan the 30th 2025-01-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> 1809-01-19        1809-01-19</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

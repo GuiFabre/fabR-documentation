@@ -13,6 +13,7 @@ fs::dir_copy(
   "../fabR-documentation/docs",
   overwrite = TRUE)
 
+# go to the project xxx-documentation
 # push to git
 "https://github.com/guifabre/fabR-documentation/actions/"
 fabR_help()

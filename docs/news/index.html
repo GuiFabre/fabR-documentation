@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fabR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -58,7 +58,30 @@
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="development version" id="fabr-development-version">fabR (development version)<a class="anchor" aria-label="anchor" href="#fabr-development-version"></a></h2>
+<h2 class="page-header" data-toc-text="2.1.0" id="fabr-210-release--2024-04-18">fabR 2.1.0 (release : 2024-04-18)<small>2024-04-19</small><a class="anchor" aria-label="anchor" href="#fabr-210-release--2024-04-18"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-and-improvements-2-1-0">Bug fixes and improvements<a class="anchor" aria-label="anchor" href="#bug-fixes-and-improvements-2-1-0"></a></h3>
+<ul><li><p><code><a href="../reference/as_any_date.html">as_any_date()</a></code> handles <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::ym</a></code> and <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">lubridate::my</a></code>. Still, some ambiguous formats are not detected (“19 July” returns 2019-07-01) <a href="https://github.com/GuiFabre/fabR/issues/15" class="external-link uri">https://github.com/GuiFabre/fabR/issues/15</a></p></li>
+<li><p>enhance performance of <code><a href="../reference/get_duplicated_cols.html">get_duplicated_cols()</a></code> and <code><a href="../reference/get_duplicated_rows.html">get_duplicated_rows()</a></code>.</p></li>
+<li><p>The function <code><a href="../reference/get_all_na_rows.html">get_all_na_rows()</a></code> had a bug when a column was named “test”, that has been fixed. <a href="https://github.com/GuiFabre/fabR/issues/13" class="external-link uri">https://github.com/GuiFabre/fabR/issues/13</a></p></li>
+<li><p>The function <code><a href="../reference/get_duplicated_rows.html">get_duplicated_rows()</a></code> had a bug when a tibble had only one column, that has been fixed. <a href="https://github.com/GuiFabre/fabR/issues/14" class="external-link uri">https://github.com/GuiFabre/fabR/issues/14</a></p></li>
+<li><p>The date functions <code><a href="../reference/as_any_date.html">as_any_date()</a></code>, <code><a href="../reference/as_any_date.html">as_any_date()</a></code>, <code><a href="../reference/as_any_date.html">as_any_date()</a></code>, have a default format setting which is yyyy-mm-dd. Also if there is ambiguity, but 100 % match, the first format will be used as the format for the whole column. <a href="https://github.com/GuiFabre/fabR/issues/12" class="external-link uri">https://github.com/GuiFabre/fabR/issues/12</a></p></li>
+<li><p>The function <code>read_any_csv()</code> can handle 3 types of CSV (coma separator, semi column separator and a mix of columns containing both), which works better. The function also handles (a priori) the latin1 encoding Still experimental. <a href="https://github.com/GuiFabre/fabR/issues/10" class="external-link uri">https://github.com/GuiFabre/fabR/issues/10</a> <a href="https://github.com/GuiFabre/fabR/issues/9" class="external-link uri">https://github.com/GuiFabre/fabR/issues/9</a></p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-functions-2-1-0">New functions<a class="anchor" aria-label="anchor" href="#new-functions-2-1-0"></a></h3>
+<ul><li>
+<code><a href="../reference/as_any_integer.html">as_any_integer()</a></code> which allows to coerce a vector compatible to integer. Text, boolean and numerics which are homogeneous to integers.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="deprecated-functions-2-1-0">deprecated functions<a class="anchor" aria-label="anchor" href="#deprecated-functions-2-1-0"></a></h3>
+<p>To avoid confusion with help(function), the function <code><a href="../reference/deprecated.html">fabR_help()</a></code> has been renamed <code><a href="../reference/fabR_website.html">fabR_website()</a></code>.</p>
+</div>
+<div class="section level3">
+<h3 id="dependency-changes-2-1-0">Dependency changes<a class="anchor" aria-label="anchor" href="#dependency-changes-2-1-0"></a></h3>
+<ul><li>set a minimum dplyr dependence to avoid bugs</li>
+<li>digest package is no longer needed in the package</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.1" id="fabr-201">fabR 2.0.1<small>2023-11-02</small><a class="anchor" aria-label="anchor" href="#fabr-201"></a></h2>
@@ -127,7 +150,7 @@
 <div class="section level3">
 <h3 id="helper-functions-1-1-1">Helper functions<a class="anchor" aria-label="anchor" href="#helper-functions-1-1-1"></a></h3>
 <ul><li>
-<code><a href="../reference/fabR_help.html">fabR_help()</a></code> Call the help center for full documentation</li>
+<code><a href="../reference/deprecated.html">fabR_help()</a></code> Call the help center for full documentation</li>
 </ul></div>
 <div class="section level3">
 <h3 id="navigate-into-a-list-1-1-1">Navigate into a list<a class="anchor" aria-label="anchor" href="#navigate-into-a-list-1-1-1"></a></h3>

@@ -28,6 +28,9 @@
     <loc>/reference/as_any_date.html</loc>
   </url>
   <url>
+    <loc>/reference/as_any_integer.html</loc>
+  </url>
+  <url>
     <loc>/reference/as_any_symbol.html</loc>
   </url>
   <url>
@@ -49,7 +52,7 @@
     <loc>/reference/fabR-package.html</loc>
   </url>
   <url>
-    <loc>/reference/fabR_help.html</loc>
+    <loc>/reference/fabR_website.html</loc>
   </url>
   <url>
     <loc>/reference/file_index_create.html</loc>
